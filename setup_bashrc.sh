@@ -1,0 +1,1 @@
+cat ./display_git_branch.txt >> ~/.bashrc
