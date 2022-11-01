@@ -1,0 +1,5 @@
+
+# ccache
+export USE_CCACHE=1
+export CCACHE_DIR=~/.ccache
+export set CXX='ccache g++'

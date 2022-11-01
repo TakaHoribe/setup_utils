@@ -34,7 +34,7 @@ try:
 
         line1.set_data(t_arr, v_arr)
         ax.set_xlim((0, t_arr[-1]))
-        ax.set_ylim((1000, 3500))
+        ax.set_ylim((1000, 5500))
 
         plt.pause(.01)
 except KeyboardInterrupt:

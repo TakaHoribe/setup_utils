@@ -1,0 +1,3 @@
+
+# ros setup
+export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}] {function_name}(): {message}:(L{line_number})"

@@ -1,0 +1,10 @@
+
+alias git_log_oneline="git log --pretty=format:'%C(yellow) %h %C(white) (%ai) %C(green) [%an] %C(white) %s'"
+
+function colcon_build_release () {
+    colcon build $@ --cmake-args -DCMAKE_BUILD_TYPE=Release --catkin-skip-building-tests  --symlink-install
+}
+
+function colcon_build_release_ignore_error () {
+    colcon build $@ --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-w" --continue-on-error
+}
