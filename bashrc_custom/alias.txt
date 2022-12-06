@@ -6,5 +6,5 @@ function colcon_build_release () {
 }
 
 function colcon_build_release_ignore_error () {
-    colcon build $@ --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-w" --continue-on-error
+    colcon build $@ --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --continue-on-error
 }
