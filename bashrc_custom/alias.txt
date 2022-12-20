@@ -8,3 +8,7 @@ function colcon_build_release () {
 function colcon_build_release_ignore_error () {
     colcon build $@ --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --continue-on-error
 }
+
+function kill_ros2() {
+	ps aux | grep '/usr/bin/python3 /opt/ros/galactic/bin/ros2' | awk '{ print $2 }' | xargs kill
+}
