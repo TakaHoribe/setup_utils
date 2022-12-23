@@ -12,3 +12,6 @@ function colcon_build_release_ignore_error () {
 function kill_ros2() {
 	ps aux | grep '/usr/bin/python3 /opt/ros/galactic/bin/ros2' | awk '{ print $2 }' | xargs kill
 }
+function kill_autoware() {
+       ps aux | grep 'autoware' | awk '{ print $2 }' | xargs kill
+}
