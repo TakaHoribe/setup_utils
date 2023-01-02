@@ -1,3 +1,4 @@
 
 # ros setup
 export RCUTILS_CONSOLE_OUTPUT_FORMAT="[{severity} {time}] [{name}] {function_name}(): {message}:(L{line_number})"
+export RCUTILS_COLORIZED_OUTPUT=1  # 1 for forcing it
