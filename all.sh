@@ -1,9 +1,9 @@
 #!/bin/sh
 
-install_utils.sh
+bash install_utils.sh
 
-chrome_installer.sh
+bash chrome_installer.sh
 
-vscode_installer.sh
+bash vscode_installer.sh
 
-setup_bashrc.sh
+bash setup_bashrc.sh
