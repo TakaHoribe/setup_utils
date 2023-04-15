@@ -2,7 +2,15 @@
 alias git_log_oneline="git log --pretty=format:'%C(yellow) %h %C(white) (%ai) %C(green) [%an] %C(white) %s'"
 
 function colcon_build_release () {
-    colcon build $@ --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --catkin-skip-building-tests
+    colcon build $@ --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --catkin-skip-building-tests 
+}
+
+function colcon_build_debug () {
+    colcon build $@ --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --catkin-skip-building-tests 
+}
+
+function colcon_build_release_no_skip_test () {
+    colcon build $@ --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 }
 
 function colcon_build_release_ignore_error () {
