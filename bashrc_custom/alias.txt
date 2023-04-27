@@ -17,6 +17,10 @@ function colcon_build_release_ignore_error () {
     colcon build $@ --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=ON --continue-on-error
 }
 
+function colcon_test () {
+    colcon test $@ --event-handlers console_cohesion+
+}
+
 function kill_ros2() {
 	ps aux | grep '/usr/bin/python3 /opt/ros/humble/bin/ros2' | awk '{ print $2 }' | xargs kill
 }
