@@ -1,0 +1,6 @@
+
+function enable_core_dump () {
+    ulimit -c unlimited;
+    echo -n 1 | sudo tee /proc/sys/kernel/core_uses_pid;
+    echo core | sudo tee /proc/sys/kernel/core_pattern;
+}
