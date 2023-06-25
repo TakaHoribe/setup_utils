@@ -1,8 +1,15 @@
 
-# display git branch
+# display git branch, edited files count, and untracked files count
 function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+    BRANCH=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/')
+    STAGED_COUNT=$(git diff --cached --numstat 2> /dev/null | wc -l)
+    UNSTAGED_COUNT=$(git diff --numstat 2> /dev/null | wc -l)
+    UNTRACKED_COUNT=$(git ls-files --others --exclude-standard 2> /dev/null | wc -l)
+    echo -n "$BRANCH"
+    [ "$STAGED_COUNT" -gt 0 -o "$UNSTAGED_COUNT" -gt 0 ] && echo -n " !$UNSTAGED_COUNT($STAGED_COUNT)"
+    [ "$UNTRACKED_COUNT" -gt 0 ] && echo -n " ?$UNTRACKED_COUNT"
 }
+
 function promps {
     local  BLUE="\[\e[1;34m\]"
     local  RED="\[\e[1;31m\]"
@@ -16,4 +23,5 @@ function promps {
     local BASE="\u@\h"
     PS1="${TITLEBAR}${GREEN}${BASE}${WHITE}:${BLUE}\w${GREEN}\$(parse_git_branch)${BLUE}\$${WHITE} "
 }
+
 promps
