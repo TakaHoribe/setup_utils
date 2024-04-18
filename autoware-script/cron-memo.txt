@@ -1,0 +1,6 @@
+SHELL=/bin/bash
+10 00 * * * source /home/horibe/.bashrc; /bin/bash /home/horibe/workspace/setup_utils/autoware-script/update-and-build.sh /home/horibe/workspace/pilot-auto.latest main > /home/horibe/workspace/pilot-auto.latest/cron-update-log.txt 2>&1
+10 02 * * * source /home/horibe/.bashrc; /bin/bash /home/horibe/workspace/setup_utils/autoware-script/update-and-build.sh /home/horibe/workspace/pilot-auto.xx1 latest-tag > /home/horibe/workspace/pilot-auto.xx1/cron-update-log.txt 2>&1
+10 04 * * * source /home/horibe/.bashrc; /bin/bash /home/horibe/workspace/setup_utils/autoware-script/update-and-build.sh /home/horibe/workspace/pilot-auto.x2 latest-tag > /home/horibe/workspace/pilot-auto.x2/cron-update-log.txt 2>&1
+10 06 * * * source /home/horibe/.bashrc; /bin/bash /home/horibe/workspace/setup_utils/autoware-script/update-and-build.sh /home/horibe/workspace/pilot-auto.x1 latest-tag > /home/horibe/workspace/pilot-auto.x1/cron-update-log.txt 2>&1
+
