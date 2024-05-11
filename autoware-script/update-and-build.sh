@@ -7,6 +7,7 @@ source /home/horibe/.bashrc
 source /opt/ros/humble/setup.bash
 
 cd $TARGET_DIR
+git fetch origin
 
 # checkout to the target branch
 if [ "$CHECKOUT_TYPE" = "main" ]; then
